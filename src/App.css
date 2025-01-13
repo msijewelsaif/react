@@ -1,38 +1,80 @@
+/* App-wide styling */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: #f8f9fa; /* Light gray background for the app */
+  padding: 20px;
+  font-family: 'Arial', sans-serif; /* Use a clean, modern font */
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1f2937; /* Darker shade for the header */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 20px;
   font-size: calc(10px + 2vmin);
   color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for a subtle elevation */
 }
 
-.App-link {
-  color: #61dafb;
+/* Dashboard container styles */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Increased gap for better spacing */
+  margin-top: 30px;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Dashboard card styles */
+.dashboard-card {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient for depth */
+  color: #333;
+  padding: 25px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Softer shadow for a modern look */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover animation */
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.dashboard-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #555; /* Subtle color for headings */
+}
+
+.dashboard-card p {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #1f2937; /* Dark color for better contrast */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .dashboard-card {
+    width: 100%; /* Make cards full width on small screens */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 480px) {
+  .App-header {
+    font-size: calc(8px + 2vmin); /* Adjust font size for smaller screens */
+    padding: 15px;
+  }
+
+  .dashboard-container {
+    gap: 20px; /* Reduce spacing between cards */
+  }
+
+  .dashboard-card {
+    padding: 15px;
   }
 }
